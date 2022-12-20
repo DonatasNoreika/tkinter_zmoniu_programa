@@ -1,0 +1,13 @@
+from tkinter import *
+langas = Tk()
+masyvas = range(1, 200)
+scrollbaras = Scrollbar(langas)
+scrollbaras2 = Scrollbar(langas)
+boksas = Listbox(langas)
+scrollbaras.config(command=boksas.yview)
+scrollbaras2.config(command=boksas.xview, orient=HORIZONTAL)
+boksas.insert(END, *masyvas)
+scrollbaras.pack(side=RIGHT, fill=Y)
+scrollbaras2.pack(side=BOTTOM, fill=X)
+boksas.pack(side=LEFT)
+langas.mainloop()
